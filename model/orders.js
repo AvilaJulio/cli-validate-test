@@ -64,5 +64,4 @@ cube(`Orders`, {
             type: `number`
         }
     },
-
 });
