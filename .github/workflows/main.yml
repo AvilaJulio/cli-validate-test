@@ -17,5 +17,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 20.x
+      - name: Install Cube backend server core
+        run: npm i @cubejs-backend/server-core
       - name: Deploy to Cube Cloud
         run: npx cubejs-cli deploy --token ${{ secrets.CUBE_CLOUD_DEPLOY_AUTH }}
