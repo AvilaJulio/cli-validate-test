@@ -62,6 +62,6 @@ cube(`Orders`, {
         user_id: {
             sql: `user_id`,
             type: `number`
-        }
+
     },
 });

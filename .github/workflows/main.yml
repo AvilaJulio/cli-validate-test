@@ -19,5 +19,9 @@ jobs:
           node-version: 20.x
       - name: Install Cube backend server core
         run: npm i @cubejs-backend/server-core
+      - name: Install Cube CLI
+        run: npm i cubejs-cli
+      - name: Validate Data Model
+        run: npx cubejs-cli validate
       - name: Deploy to Cube Cloud
         run: npx cubejs-cli deploy --token ${{ secrets.CUBE_CLOUD_DEPLOY_AUTH }}
