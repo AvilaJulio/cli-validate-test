@@ -1,0 +1,21 @@
+name: My Cube App
+on:
+  push:
+    paths:
+      - "**"
+    branches:
+      - "main"
+jobs:
+  deploy:
+    name: Deploy My Cube App
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Use Node.js 20.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 20.x
+      - name: Deploy to Cube Cloud
+        run: npx cubejs-cli deploy --token ${{ secrets.CUBE_CLOUD_DEPLOY_AUTH }}
